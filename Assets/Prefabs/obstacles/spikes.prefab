@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1942197871787136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.490864, y: 3.29235, z: 0}
+  m_LocalPosition: {x: -285.32977, y: 470.61798, z: 0}
   m_LocalScale: {x: 1.224375, y: 0.2305076, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,7 +50,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1942197871787136}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 89b41828c2d2a6a439fe269207b8983f, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -78,7 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8570788c5c560044fa2d0276896a8c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  tag: Player
+  t: {fileID: 0}
+  c: {fileID: 0}
 --- !u!212 &212981560968909996
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,7 +94,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

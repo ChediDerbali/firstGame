@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StickControle : MonoBehaviour {
 
@@ -9,6 +11,8 @@ public class StickControle : MonoBehaviour {
     public LayerMask ground;
     public int jumps = 2;
     private int j;
+    private int count = 0;
+    public Text countText;
 
     // Use this for initialization
     void Start () {
@@ -38,7 +42,10 @@ public class StickControle : MonoBehaviour {
         {
             GetComponent<Rigidbody2D>().gravityScale = 7;
         }
-
+        if (GetComponent<Transform>().position.y < -25)
+        {
+            SceneManager.LoadScene("gameOver");
+        }
 
 
 
@@ -51,6 +58,9 @@ public class StickControle : MonoBehaviour {
         //Check the provided Collider2D parameter other to see if it is tagged "PickUp", if it is...
         if (other.gameObject.CompareTag("Collect"))
         {
+            count++;
+            countText.text = count.ToString();
+            PlayerPrefs.SetInt("coin", count);
             Destroy(other.gameObject);
         }
     }

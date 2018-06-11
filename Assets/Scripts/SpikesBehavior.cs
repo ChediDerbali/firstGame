@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpikesBehavior : MonoBehaviour {
 
     public string tag ="Player";
+    public Text t,c;
+    float time;
+    int count;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -18,8 +23,10 @@ public class SpikesBehavior : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == tag)
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.up * 10 + Vector2.left;
-            ;
+        if (collision.gameObject.tag == "Player")
+        {
+            PlayerPrefs.SetFloat("time", time);
+            SceneManager.LoadScene("gameOver");
+        }
     }
 }
